@@ -1,1 +1,0 @@
-<h1>This is about page in a folder</h1>

@@ -17,21 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function () {
-    $about = 'This is about page';
-    return view('about',['about' => $about]);
+Route::get('/home', function () {
+    return view('home');
 });
 
 Route::get('about', function () {
-    $about = 'This is about page';
-    $about2 = 'This is about page 2';
-    return view('about',compact('about', 'about2'));
-});
+    return view('about');
+})->name('about');
+
+// Route::get('about', function () {
+//     $about = 'This is about page';
+//     $about2 = 'This is about page 2';
+//     return view('about',compact('about', 'about2'));
+// });
 
 // folder
-Route::get('aboutf', function () {
-    return view('about.index');
-});
+// Route::get('aboutf', function () {
+//     return view('about.index');
+// });
 
 Route::get("contact", function() {
     return view('contact');
