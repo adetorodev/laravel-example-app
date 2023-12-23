@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return "<h1>About page</h1>";
-});
+})->name('about');
 
 Route::get("contact", function() {
     return "<h1>Contact us page<h1>";
@@ -29,6 +29,14 @@ Route::get("contact/{id}", function($id) {
     return $id;
 });
 
-// Route::get("contact/{id}", function($id) {
-//     Contact::id;
-// });
+Route::get("contact/{id}", function($id) {
+    return $id;
+})->name('edit-contact');
+
+Route::get("home", function() {
+    return "<a href='".route('about')."'>About</a>";
+});
+
+Route::get("conta", function($id) {
+    return "<a href='".route('edit-contact', Sid)."'>Edit Contact</a>";
+});
