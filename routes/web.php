@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,69 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/home', [HomeController::class, 'index']);
-
 Route::get('/home', HomeController::class);
-
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-
-Route::get("contact", [ContactController::class, 'index']);
-Route::resource('blog', BlogController::class);
-
-
-
-// Route::get('about', function () {
-//     $about = 'This is about page';
-//     $about2 = 'This is about page 2';
-//     return view('about',compact('about', 'about2'));
-// });
-
-// folder
-// Route::get('aboutf', function () {
-//     return view('about.index');
-// });
-
-
-
-// Route::get("contact/{id}", function($id) {
-//     return $id;
-// });
-
-// Route::get("contact/{id}", function($id) {
-//     return $id;
-// })->name('edit-contact');
-
-// Route::get("home", function() {
-//     return "<a href='".route('about')."'>About</a>";
-// });
-
-// Route::get("conta", function($id) {
-//     return "<a href='".route('edit-contact', Sid)."'>Edit Contact</a>";
-// });
-
-// Route Grouping
-// Route::prefix('customer')->group(function () {
-//     Route::get('/', function () {
-//         return "<h1>Customer List</h1>";
-//     });
-
-//     Route::get('/create', function () {
-//         return "<h1>Customer Create</h1>";
-//     });
-
-//     Route::get('/show', function () {
-//         return "<h1>Customer show</h1>";
-//     });
-// });
-
-// Route Method
-/**
- * GET
- * POST
- * PUT
- * PATCH
- * DELETE
- */
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 
  // fallback route
