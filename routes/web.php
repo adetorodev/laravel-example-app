@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,35 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    $blogs = [
-        [
-            "title" => "Title One",
-            "body" => "this is body text",
-            "status" => 1,
-        ],
-        [
-            "title" => "Title 2",
-            "body" => "this is body text",
-            "status" => 0,
-        ],
-        [
-            "title" => "Title 3",
-            "body" => "this is body text",
-            "status" => 1,
-        ],
-        [
-            "title" => "Title 4",
-            "body" => "this is body text",
-            "status" => 0,
-        ]
-        ];
-    return view('home', compact('blogs'));
-});
+Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('about', function () {
-    return view('about');
-})->name('about');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get("contact", [ContactController::class, 'index']);
+
+
 
 // Route::get('about', function () {
 //     $about = 'This is about page';
@@ -58,9 +39,7 @@ Route::get('about', function () {
 //     return view('about.index');
 // });
 
-Route::get("contact", function() {
-    return view('contact');
-});
+
 
 // Route::get("contact/{id}", function($id) {
 //     return $id;
@@ -101,6 +80,7 @@ Route::get("contact", function() {
  * PATCH
  * DELETE
  */
+
 
  // fallback route
 Route::fallback(function(){
