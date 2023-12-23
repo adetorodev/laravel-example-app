@@ -18,11 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return "<h1>About page</h1>";
-})->name('about');
+    return view('about');
+});
+// folder
+Route::get('aboutf', function () {
+    return view('about.index');
+});
 
 Route::get("contact", function() {
-    return "<h1>Contact us page<h1>";
+    return view('contact');
 });
 
 // Route::get("contact/{id}", function($id) {
