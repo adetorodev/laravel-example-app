@@ -17,13 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/about', function () {
-//     return "<h1>About page</h1>";
-// })->name('about');
+Route::get('about', function () {
+    return "<h1>About page</h1>";
+})->name('about');
 
-// Route::get("contact", function() {
-//     return "<h1>Contact us page<h1>";
-// });
+Route::get("contact", function() {
+    return "<h1>Contact us page<h1>";
+});
 
 // Route::get("contact/{id}", function($id) {
 //     return $id;
@@ -42,20 +42,33 @@ Route::get('/', function () {
 // });
 
 // Route Grouping
-Route::prefix('customer')->group(function () {
-    Route::get('/', function () {
-        return "<h1>Customer List</h1>";
-    });
+// Route::prefix('customer')->group(function () {
+//     Route::get('/', function () {
+//         return "<h1>Customer List</h1>";
+//     });
 
-    Route::get('/create', function () {
-        return "<h1>Customer Create</h1>";
-    });
+//     Route::get('/create', function () {
+//         return "<h1>Customer Create</h1>";
+//     });
 
-    Route::get('/show', function () {
-        return "<h1>Customer show</h1>";
-    });
+//     Route::get('/show', function () {
+//         return "<h1>Customer show</h1>";
+//     });
+// });
+
+// Route Method
+/**
+ * GET
+ * POST
+ * PUT
+ * PATCH
+ * DELETE
+ */
+
+ // fallback route
+Route::fallback(function(){
+    return "Route not exist";
 });
-
 
 
 
