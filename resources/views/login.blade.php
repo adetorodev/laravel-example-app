@@ -4,6 +4,11 @@
 <div class="row mt-5 justify-content-center">
     <div class="col-md-6">
         <h1 class="md-4">Login</h1>
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+        @endif
         <div class="card">
             <div class="card-body">
                 <form action="{{route('login.summit')}}" method="POST">
