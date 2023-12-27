@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return DB::table('posts')->first();
+        return DB::table('posts')->pluck('title');
 
         return view('home', compact('blogs'));
     }
