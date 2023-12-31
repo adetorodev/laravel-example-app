@@ -14,8 +14,18 @@ class HomeController extends Controller
     {
         // DB::table('posts')->where('id', 1)->delete();
         // DB::table('posts')->delete(2);
-        return DB::table('posts')->join('Category', 'posts.category_id', '=', 'category.id')
-        ->select('posts.*') // give onle the post
-        ->get();
+        // return DB::table('posts')->join('Category', 'posts.category_id', '=', 'category.id')
+        // ->select('posts.*') // give onle the post
+        // ->get();
+
+        /** 
+         * count()
+         * max()
+         * min()
+         * avg()
+         * sum()
+         */
+        
+        return DB::tabele('posts')->count();
     }
 }
