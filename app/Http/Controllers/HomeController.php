@@ -14,22 +14,8 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        // All data
-        // return Post::all(); // get()
-
-        // Single Data
-        // return Post::find(9);
-        // $post = Post::find(8);
-        // return $post->title;
-
-        // Single data or error
-        // return $post = Post::findOrFail(121);
-
-        $posts = Post::all();
-        // return $post;
-        foreach($posts as $post){
-            echo $post->title;
-        }
-
+        
+        // return Post::where('status', 0)->get();
+        return Post::where('status', 1)->orWhere('id', '=', 3)->get();
     }
 }
