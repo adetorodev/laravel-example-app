@@ -15,36 +15,16 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         
-        // // return Post::where('status', 0)->get();
-        // return Post::where('status', 1)->orWhere('id', '=', 3)->get();
+        $post = Post::create([
+            'title' => 'this is mass assign',
+            'description'=>'This is description',
+            'status'=> 1,
+            'publish_at'=> date('Y-m-d'),
+            'category_id'=> 3,
+            'user_id' => 1
+        ]);
 
-        // Insert new Post 
-        // $post = new Post();
+        dd('success');
 
-        // $post->title = 'Post 102';
-        // $post->description = 'Post 102';
-        // $post->status = 1;
-        // $post->publish_at = date('Y-m-d');
-        // $post->user_id = 1;
-        // $post->category_id=2;
-
-        // $post->save();
-        // dd('suceess');
-
-
-        //edit post
-        // $post = Post::find(1);
-        // $post->title = "This is new title";
-        // $post->description = "I anew thing all the day";
-        // $post->save();
-
-        // $post = Post::where('id', 5)->first();
-        // $post->title = "This is new title";
-        // $post->description = "I anew thing all the day";
-        // $post->save();
-
-        Post::find(7)->delete();
-
-        dd('sucess');
     }
 }
