@@ -19,16 +19,30 @@ class HomeController extends Controller
         // return Post::where('status', 1)->orWhere('id', '=', 3)->get();
 
         // Insert new Post 
-        $post = new Post();
+        // $post = new Post();
 
-        $post->title = 'Post 102';
-        $post->description = 'Post 102';
-        $post->status = 1;
-        $post->publish_at = date('Y-m-d');
-        $post->user_id = 1;
-        $post->category_id=2;
+        // $post->title = 'Post 102';
+        // $post->description = 'Post 102';
+        // $post->status = 1;
+        // $post->publish_at = date('Y-m-d');
+        // $post->user_id = 1;
+        // $post->category_id=2;
 
+        // $post->save();
+        // dd('suceess');
+
+
+        //edit post
+        // $post = Post::find(1);
+        // $post->title = "This is new title";
+        // $post->description = "I anew thing all the day";
+        // $post->save();
+
+        $post = Post::where('id', 5)->first();
+        $post->title = "This is new title";
+        $post->description = "I anew thing all the day";
         $post->save();
-        dd('suceess');
+
+        dd('sucess');
     }
 }
