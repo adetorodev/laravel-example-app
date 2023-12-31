@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class PostSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,16 +15,10 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         for($i=1; $i <= 5; $i++){
-            DB::table('posts') -> insert([
-            'title' =>  Str::random(20),
-            'description' => Str::random(200),
-            'status' => 1,
-            'publish_at' => date('Y-m-d'),
-            'user_id' => 1,
-            'category_id' => 1
+            DB::table('category') -> insert([
+            'name' =>  Str::random(10),
 
         ]);
         }
-        
     }
 }
