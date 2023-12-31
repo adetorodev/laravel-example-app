@@ -15,7 +15,20 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         
-        // return Post::where('status', 0)->get();
-        return Post::where('status', 1)->orWhere('id', '=', 3)->get();
+        // // return Post::where('status', 0)->get();
+        // return Post::where('status', 1)->orWhere('id', '=', 3)->get();
+
+        // Insert new Post 
+        $post = new Post();
+
+        $post->title = 'Post 102';
+        $post->description = 'Post 102';
+        $post->status = 1;
+        $post->publish_at = date('Y-m-d');
+        $post->user_id = 1;
+        $post->category_id=2;
+
+        $post->save();
+        dd('suceess');
     }
 }
