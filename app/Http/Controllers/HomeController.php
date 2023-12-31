@@ -15,13 +15,22 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         
-        $post = Post::create([
-            'title' => 'this is mass assign',
-            'description'=>'This is description',
-            'status'=> 1,
-            'publish_at'=> date('Y-m-d'),
-            'category_id'=> 3,
-            'user_id' => 1
+        // $post = Post::create([
+        //     'title' => 'this is mass assign',
+        //     'description'=>'This is description',
+        //     'status'=> 1,
+        //     'publish_at'=> date('Y-m-d'),
+        //     'category_id'=> 3,
+        //     'user_id' => 1
+        // ]);
+
+        // $post = Post::find(4)->update([
+        //     'title' => 'this is mass assign',
+        //     'description'=>'This is description',
+        // ]);
+
+        $post = Post::where('status', 1)->update([
+            'status' => 0,
         ]);
 
         dd('success');
