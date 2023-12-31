@@ -38,10 +38,12 @@ class HomeController extends Controller
         // $post->description = "I anew thing all the day";
         // $post->save();
 
-        $post = Post::where('id', 5)->first();
-        $post->title = "This is new title";
-        $post->description = "I anew thing all the day";
-        $post->save();
+        // $post = Post::where('id', 5)->first();
+        // $post->title = "This is new title";
+        // $post->description = "I anew thing all the day";
+        // $post->save();
+
+        Post::find(7)->delete();
 
         dd('sucess');
     }
