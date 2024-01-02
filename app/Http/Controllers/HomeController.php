@@ -33,7 +33,9 @@ class HomeController extends Controller
         //     'status' => 0,
         // ]);
         // Post::find(3)->delete();
-        return Post::onlyTrashed()->get();
+        // return Post::onlyTrashed()->get();
+
+        Post::withTrashed()->find(3)->restore();
 
         dd('success');
 
