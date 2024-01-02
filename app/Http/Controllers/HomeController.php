@@ -29,9 +29,11 @@ class HomeController extends Controller
         //     'description'=>'This is description',
         // ]);
 
-        $post = Post::where('status', 1)->update([
-            'status' => 0,
-        ]);
+        // $post = Post::where('status', 1)->update([
+        //     'status' => 0,
+        // ]);
+        // Post::find(3)->delete();
+        return Post::onlyTrashed()->get();
 
         dd('success');
 
