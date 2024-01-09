@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\MyPost;
 use App\Models\Post;
 use App\Models\User;
@@ -41,9 +42,9 @@ class HomeController extends Controller
 
         // dd('success');
 
-        $users = User::all();
+        $addresses = Address::all();
 
-        return view('home', compact('users'));
+        return view('home', compact('addresses'));
 
     }
 }
