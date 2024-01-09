@@ -21,12 +21,12 @@ class DatabaseSeeder extends Seeder
         // ]);
         // $this->call(PostSeeder::class);
 
-        // Post::factory(100)->create();
-        $this->call([
-            UserSeeder::class,
-            PostSeeder::class,
-            AddressSeeder::class,
-            CategorySeeder::class,
-        ]);
+        Post::factory(100)->create();
+        // $this->call([
+        //     UserSeeder::class,
+        //     PostSeeder::class,
+        //     AddressSeeder::class,
+        //     CategorySeeder::class,
+        // ]);
     }
 }
