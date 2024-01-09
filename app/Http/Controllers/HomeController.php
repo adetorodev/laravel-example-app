@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
+use App\Models\Category;
 use App\Models\MyPost;
 use App\Models\Post;
 use App\Models\User;
@@ -42,9 +43,13 @@ class HomeController extends Controller
 
         // dd('success');
 
-        $addresses = Address::all();
+        // $addresses = Address::all();
 
-        return view('home', compact('addresses'));
+        // return view('home', compact('addresses'));
+
+        $categories = Category::find(4)->posts;
+
+        return view('home', compact('categories'));
 
     }
 }
