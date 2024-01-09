@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MyPost;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,9 +36,14 @@ class HomeController extends Controller
         // Post::find(3)->delete();
         // return Post::onlyTrashed()->get();
 
-        Post::withTrashed()->find(3)->restore();
+        // Post::withTrashed()->find(2)->restore();
+        // Post::withTrashed()->find(2)->forceDelete();
 
-        dd('success');
+        // dd('success');
+
+        $users = User::all();
+
+        return view('home', compact('users'));
 
     }
 }
