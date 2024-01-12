@@ -58,7 +58,7 @@ class HomeController extends Controller
         // $post->tags()->attach($tag);
         // $post->tags()->attach([2,3,4]);
 
-        return view('home', compact('post'));
+        return view('home');
 
     }
 }
