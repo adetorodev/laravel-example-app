@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
 
         // Post::factory(100)->create();
         $this->call([
-            UserSeeder::class,
+            // UserSeeder::class,
             // PostSeeder::class,
-            AddressSeeder::class,
-            CategorySeeder::class,
+            // AddressSeeder::class,
+            // CategorySeeder::class,
         ]);
     }
 }

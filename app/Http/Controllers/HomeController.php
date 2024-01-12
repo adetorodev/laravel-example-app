@@ -6,6 +6,7 @@ use App\Models\Address;
 use App\Models\Category;
 use App\Models\MyPost;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -47,9 +48,17 @@ class HomeController extends Controller
 
         // return view('home', compact('addresses'));
 
-        $categories = Category::find(4)->posts;
+        // $categories = Category::find(4)->posts;
 
-        return view('home', compact('categories'));
+        // return view('home', compact('categories'));
+        // $post = Post::first(1);
+        // $post = Post::all(1);
+        // $tag = Tag::first(1);
+
+        // $post->tags()->attach($tag);
+        // $post->tags()->attach([2,3,4]);
+
+        return view('home', compact('post'));
 
     }
 }
