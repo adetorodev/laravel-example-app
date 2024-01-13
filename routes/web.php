@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/home', HomeController::class);
 
-Route::post('/upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
+Route::post('/upload', [ImageController::class, 'handleImage'])->name('upload');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
