@@ -2,7 +2,8 @@
 
 @section('content')
    <main role='main' class="contianer">
-   <form action="{{route("upload-file")}}" method="POST" entype="multipart/form-data">
+    <image src='{{assets(storage/app/public/images/)}}' alt='' >
+   <form action="{{route("upload-file")}}" entype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="">Upload</label>
