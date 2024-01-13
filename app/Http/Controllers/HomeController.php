@@ -10,6 +10,8 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use File;
 
 class HomeController extends Controller
 {
@@ -57,6 +59,11 @@ class HomeController extends Controller
 
         // $post->tags()->attach($tag);
         // $post->tags()->attach([2,3,4]);
+        // Storage::delete('/images/image_1.jpg');
+        // File::delete(storage_path('/app/public/images/'))
+        unlink(storage_path('/app/public/images/'))
+
+        // Storage::disk('public')->delete('/images/image_1.jpg');
 
         return view('home');
 
